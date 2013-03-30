@@ -5,6 +5,10 @@ gem 'rails', '3.2.11'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+group :development, :test do
+  gem 'sextant'
+  gem 'quiet_assets'
+end
 
 
 # Gems used only for assets and not required
@@ -14,7 +18,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
+  gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
 end
@@ -23,6 +27,12 @@ gem 'jquery-rails'
 gem 'mongoid'
 gem 'devise'
 gem 'httparty'
+gem 'rails_admin'
+gem 'airbrake_user_attributes'
+gem 'hashie'
+gem 'gon'
+gem 'verbs'
+gem 'chosen-rails'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
