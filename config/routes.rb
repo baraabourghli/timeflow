@@ -1,8 +1,8 @@
 Timeflow::Application.routes.draw do
-  resources :comments
-
-
   resources :issues
+
+
+  resources :comments
 
 
   resources :users
