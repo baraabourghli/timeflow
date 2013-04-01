@@ -1,11 +1,17 @@
 Timeflow::Application.routes.draw do
+  resources :activities
+
+
+  resources :projects
+
+
+  resources :users
+
+
   resources :issues
 
 
   resources :comments
-
-
-  resources :users
 
 
   root :to => "home#index"
