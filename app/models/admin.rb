@@ -1,4 +1,4 @@
-class User
+class Admin
   include Mongoid::Document
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
@@ -28,10 +28,10 @@ class User
   field :last_sign_in_ip,    :type => String
 
   ## Confirmable
-  field :confirmation_token,   :type => String
-  field :confirmed_at,         :type => Time
-  field :confirmation_sent_at, :type => Time
-  field :unconfirmed_email,    :type => String # Only if using reconfirmable
+  # field :confirmation_token,   :type => String
+  # field :confirmed_at,         :type => Time
+  # field :confirmation_sent_at, :type => Time
+  # field :unconfirmed_email,    :type => String # Only if using reconfirmable
 
   ## Lockable
   # field :failed_attempts, :type => Integer, :default => 0 # Only if lock strategy is :failed_attempts
@@ -40,14 +40,4 @@ class User
 
   ## Token authenticatable
   # field :authentication_token, :type => String
-  
-  field :name
-  validates_presence_of :name
-  validates_uniqueness_of :name, :email, :case_sensitive => false
-  attr_accessible :name, :email, :password, :password_confirmation, :remember_me
-
-  has_many :projects
-  has_many :issues
-  has_many :activities
-  has_many :comments
 end

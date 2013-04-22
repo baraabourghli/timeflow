@@ -1,4 +1,12 @@
 Timeflow::Application.routes.draw do
+  devise_for :admins
+
+  get "users/show"
+
+  get "home/index"
+
+  devise_for :users
+
   resources :activities
 
 
