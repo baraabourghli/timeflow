@@ -185,6 +185,7 @@ PLATFORMS
 
 DEPENDENCIES
   airbrake_user_attributes
+  bootstrap-sass
   chosen-rails
   coffee-rails (~> 3.2.1)
   devise
