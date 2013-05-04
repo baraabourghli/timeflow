@@ -4,7 +4,7 @@
     <%= f.email_field :email, :autofocus => true %>
     <%= f.password_field :password %>
     <% if devise_mapping.rememberable? -%>
-      <label class="checkbox"> <%= f.label :remember_me %> Rembmer me </label>
+      <%= f.label :remember_me %>
     <% end -%>
     <%= f.submit "Sign in", :class=>'btn btn-primary' %>
   <% end %>
