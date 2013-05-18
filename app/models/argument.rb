@@ -1,4 +1,4 @@
-class Comment
+class Argument
   include Mongoid::Document
   include Mongoid::Timestamps
 
@@ -6,6 +6,6 @@ class Comment
 
   belongs_to :user
   
-  embedded_in :issue
+  embedded_in :bid
 
 end

@@ -46,8 +46,8 @@ class User
   validates_uniqueness_of :name, :email, :case_sensitive => false
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me
 
-  has_many :projects
-  has_many :issues
-  has_many :activities
-  has_many :comments
+  belongs_to :contribution, class_name: 'Project', inverse_of: :contributers
+  belongs_to :watching, class_name: 'Project', inverse_of: :watchers
+  has_many :projects, class_name: 'Project', inverse_of: :owner
+
 end
