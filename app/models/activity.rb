@@ -1,8 +1,9 @@
 class Activity
   include Mongoid::Document
+  include Mongoid::TimeStamps
 
-  belongs_to :author
   field :action, type: String
   field :subject, type: String
-  field :date
+  field :object
+
 end
