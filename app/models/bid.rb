@@ -1,6 +1,6 @@
 class Bid
   include Mongoid::Document
-  include Mongoid::TimeStamps
+  include Mongoid::Timestamps
 
   field :title, type: String
   field :description, type: String

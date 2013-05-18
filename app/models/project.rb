@@ -1,6 +1,6 @@
 class Project
   include Mongoid::Document
-  include Mongoid::TimeStamps
+  include Mongoid::Timestamps
 
   field :name, type: String
 
@@ -9,7 +9,6 @@ class Project
   has_many :watchers, class_name: 'User', inverse_of: :watching
 
   embeds_many :issues
-  embeds_many :activities
   embeds_many :bids
 
   validates_presence_of :owner

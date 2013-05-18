@@ -1,6 +1,6 @@
 class Issue
   include Mongoid::Document
-  include Mongoid::TimeStamps
+  include Mongoid::Timestamps
 
   field :title, type: String
   field :difficulty, type: String
