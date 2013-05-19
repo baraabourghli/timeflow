@@ -37,6 +37,13 @@ gem 'gon'
 gem 'verbs'
 gem 'chosen-rails'
 gem 'bootstrap-sass'
+gem "rspec-rails", :group => [:test, :development]
+group :test do
+  gem "factory_girl_rails", "~> 4.0"
+  gem "capybara"
+  gem "guard-rspec"
+  gem "database_cleaner"
+end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

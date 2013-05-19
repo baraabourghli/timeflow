@@ -2,9 +2,9 @@ class Project
   include Mongoid::Document
   include Mongoid::Timestamps
 
-  field :name, type: String
+  field :title, type: String
 
-  belongs_to :owner, class_name: 'User', inverse_of: :projcts
+  belongs_to :owner, class_name: 'User', inverse_of: :projects
   has_many :contributers, class_name: 'User', inverse_of: :contribution
   has_many :watchers, class_name: 'User', inverse_of: :watching
 
