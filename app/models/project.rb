@@ -11,6 +11,6 @@ class Project
   embeds_many :issues
   embeds_many :bids
 
-  validates_presence_of :owner
+  #validates_presence_of :owner
 
 end

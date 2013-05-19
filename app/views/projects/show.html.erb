@@ -11,20 +11,9 @@
 </p>
 
 <p>
-  <b>Participants:</b>
-  <%= @project.participants %>
-</p>
-
-<p>
   <b>Issues:</b>
   <%= @project.issues %>
 </p>
-
-<p>
-  <b>Activites:</b>
-  <%= @project.activites %>
-</p>
-
 
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>

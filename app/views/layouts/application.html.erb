@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app="Project">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,7 +25,9 @@
     <div id="main" role="main">
       <div class="container-fluid">
               <%= render 'layouts/messages' %>
-              <%= yield %>
+              <div>
+                <%= yield %>
+              </div>
           <footer>
          </footer>
       </div> <!--! end of .container -->
