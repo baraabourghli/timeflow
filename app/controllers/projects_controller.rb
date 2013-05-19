@@ -3,7 +3,8 @@ class ProjectsController < ApplicationController
 
   # GET /projects.json
   def index
-    @projects = Project.all
+    @projects = current_user.projects
+    @projects << current_user.contribution
 
     respond_with @projects
   end
