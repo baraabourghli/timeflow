@@ -1,31 +1,18 @@
-<h1>Listing projects</h1>
+<p id="notice"><%= notice %></p>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Owner</th>
-    <th>Participants</th>
-    <th>Issues</th>
-    <th>Activites</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div ng-controller='ProjectsCtrl'>
+  <form ng-submit="addProject()">
+    <input type='text' ng-model='newProject.name'>
+    <input type="submit" value="Add">
+  </form>
 
-<% @projects.each do |project| %>
-  <tr>
-    <td><%= project.name %></td>
-    <td><%= project.owner %></td>
-    <td><%= project.participants %></td>
-    <td><%= project.issues %></td>
-    <td><%= project.activites %></td>
-    <td><%= link_to 'Show', project %></td>
-    <td><%= link_to 'Edit', edit_project_path(project) %></td>
-    <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+  <ul>
+    <li ng-repeat="project in projects">
+      {{project.name}}
+      {{project.issues.count}}
+      <button ng-click="addIssue(project)">Add Issue</button>
+    </li>
+  </ul>
 
-<br />
 
-<%= link_to 'New Project', new_project_path %>
+</div>
