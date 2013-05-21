@@ -1,8 +1,7 @@
 Timeflow::Application.routes.draw do
   
-  devise_for :admins
-  
-  devise_for :users
+  #:path_names => { :sign_up => 'register', :sign_in => 'login' }
+  devise_for :users, :path => '', :skip => [:passwords]
 
   resources :activities, only: [:index, :show]
 
