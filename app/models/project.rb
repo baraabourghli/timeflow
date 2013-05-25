@@ -11,6 +11,8 @@ class Project
   embeds_many :issues
   embeds_many :bids
 
+  # accepts_nested_attributes_for :issues
+
   validates_presence_of :owner
 
 end

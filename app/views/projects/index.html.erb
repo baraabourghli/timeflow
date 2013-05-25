@@ -1,0 +1,20 @@
+<div>
+  <%= form_for Project.new, :remote => true, :method => :post  do |f| %>
+    <%= f.text_field :title %>
+    <%= f.submit 'Add Project' %>
+  <% end %>
+  <ul class="projects thumbnails">
+    <% @projects.each do |project| %>
+      <li class="span4">
+        <div class="thumbnail">
+          <h3><%= project.title %></h3>
+          <p>issues count: <%= project.issues.count %></p>
+        </div>
+        <%= form_for [project, project.issues.new], :remote => true, :method => :post do |f| %>
+          <%= f.text_field :title %>
+          <%= f.submit 'Add Issue' %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>

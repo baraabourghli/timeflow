@@ -10,6 +10,13 @@ group :development, :test do
   gem 'quiet_assets'
 end
 
+group :test do
+  gem "factory_girl_rails", "~> 4.0"
+  gem "capybara"
+  gem "guard-rspec"
+  gem "rspec-rails"
+  gem "database_cleaner"
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -37,13 +44,6 @@ gem 'gon'
 gem 'verbs'
 gem 'chosen-rails'
 gem 'bootstrap-sass'
-gem "rspec-rails", :group => [:test, :development]
-group :test do
-  gem "factory_girl_rails", "~> 4.0"
-  gem "capybara"
-  gem "guard-rspec"
-  gem "database_cleaner"
-end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

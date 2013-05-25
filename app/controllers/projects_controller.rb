@@ -1,24 +1,28 @@
 class ProjectsController < ApplicationController
-  respond_to :json
 
   # GET /projects.json
   def index
     @projects = Project.all
-    #@projects << current_user.contribution
+    # @project = []
+    # @projects << current_user.projects
+    # @projects << current_user.contribution
 
-    respond_with @projects
+    respond_to do |format|
+      format.html
+    end
   end
 
   # GET /projects/1.json
   def show
     @project = Project.find(params[:id])
 
-    respond_with @project
+    respond_to do |format|
+      format.html
+    end
   end
 
   # POST /projects.json
   def create
-    # raise params.inspect
     @project = Project.new(params[:project])
     @project.owner = current_user
 

@@ -1,20 +1,21 @@
 class IssuesController < ApplicationController
-  respond_to :json
 
-  # GET /issues/1.json
+  # GET /issues/1
   def show
     @issue = Issue.find(params[:id])
     
-    respond_with @issue
+    respond_to do |format|
+      format.html
+    end
   end
 
   # POST /issues.json
   def create
-    @issue = Issue.new(params[:issue])
+    @issue = Project.find(params[:project_id]).issues.new(params[:issue])
 
     respond_to do |format|
       if @issue.save
-        format.json { render json: @issue, status: :created, location: @issue }
+        format.json { render json: @issue, status: :created }
       else
         format.json { render json: @issue.errors, status: :unprocessable_entity }
       end

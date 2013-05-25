@@ -1,27 +1,4 @@
-  <%  if current_user %>
-    	<h1> Hi <%= current_user.name %> This is where you will see everything</h1> 
-  <%  end %>
-
-<p id="notice"><%= notice %></p>
-
-
-<div ng-controller='ProjectsCtrl'>
-  <form ng-submit="addProject()">
-    <input type='text' ng-model='newProject.title'>
-    <input type="submit" value="Add">
-  </form>
-
-  <ul class="projects thumbnails">
-    <li class="span4" ng-repeat="project in projects">
-      <div class="thumbnail">
-        <h3>{{project.title}}</h3>
-        <p>issues count: {{project.issues.count}}</p>
-      </div>
-      <button ng-click="addIssue(project)">Add Issue</button>
-    </li>
-  </ul>
-
-
-</div>
-
+<%  if current_user %>
+    <h1> Hi <%= current_user.name %> This is where you will see everything</h1> 
+<%  end %>
 

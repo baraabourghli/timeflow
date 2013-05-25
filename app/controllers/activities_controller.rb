@@ -1,5 +1,4 @@
 class ActivitiesController < ApplicationController
-  respond_to :json
 
   # GET /activities.json
   def index
