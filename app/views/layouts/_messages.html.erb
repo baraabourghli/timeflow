@@ -1,4 +1,4 @@
-<% if false %>
+<%= devise_error_messages! %>
 
 <% flash.each do |name, msg| %>
   <% if msg.is_a?(String) %>
@@ -7,6 +7,4 @@
       <%= content_tag :div, msg, :id => "flash_#{name}" %>
     </div>
   <% end %>
-<% end %>
-
 <% end %>
