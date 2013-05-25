@@ -1,7 +1,7 @@
 var app = angular.module("Project", ["ngResource"]);
 
 app.factory("Project", ["$resource", function($resource) {
-  var Project = $resource("/projects/:id", {id: "@id"}, {update: {method: "PUT"}});
+  var Project = $resource("/projects/:id", {id: "@id"}, {update: {method: "PUT"},create: {method: "POST"}});
   return Project;
 }]);
 

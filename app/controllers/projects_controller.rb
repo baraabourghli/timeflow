@@ -6,10 +6,7 @@ class ProjectsController < ApplicationController
     @projects = Project.all
     #@projects << current_user.contribution
 
-    #respond_with @projects
-    respond_to do |format|
-      format.html
-    end
+    respond_with @projects
   end
 
   # GET /projects/1.json
@@ -21,6 +18,7 @@ class ProjectsController < ApplicationController
 
   # POST /projects.json
   def create
+    # raise params.inspect
     @project = Project.new(params[:project])
     @project.owner = current_user
 
